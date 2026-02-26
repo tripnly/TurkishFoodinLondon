@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -79,5 +85,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...areaPages, ...dishPages]
+  // Blog posts
+  const blogPosts = [
+    { slug: 'what-is-ocakbasi', date: '2025-01-20' },
+    { slug: 'turkish-breakfast-guide', date: '2025-01-15' },
+    { slug: 'green-lanes-history', date: '2025-01-10' },
+    { slug: 'ordering-turkish-meat', date: '2025-01-05' },
+    { slug: 'best-byob-turkish-restaurants', date: '2025-01-02' },
+  ]
+  const blogPages = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...staticPages, ...areaPages, ...dishPages, ...blogPages]
 }

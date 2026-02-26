@@ -8,8 +8,8 @@ const navItems = [
   { href: '/areas', label: 'Areas' },
   { href: '/dishes', label: 'Dishes' },
   { href: '/restaurants', label: 'Restaurants' },
+  { href: '/blog', label: 'Blog' },
   { href: '/map', label: 'Map' },
-  { href: '/about', label: 'About' },
 ]
 
 export default function Header() {
