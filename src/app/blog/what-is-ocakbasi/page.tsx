@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-01-20',
     authors: ['Turkish Food in London'],
+    images: ['/images/blog/ocakbasi-grill.jpg'],
   },
   alternates: {
     canonical: 'https://turkishfoodinlondon.com/blog/what-is-ocakbasi',
@@ -25,8 +26,11 @@ export default function OcakbasiPost() {
       description="Understanding the traditional Turkish grill house and why it matters."
       date="2025-01-20"
       category="Food Culture"
-      categorySlug="what-is-ocakbasi"
+      categorySlug="food-culture"
+      slug="what-is-ocakbasi"
       readTime="5 min read"
+      featuredImage="/images/blog/ocakbasi-grill.jpg"
+      featuredImageAlt="Traditional Turkish ocakbaşı grill with flames and skewers"
       relatedPosts={[
         { href: '/blog/ordering-turkish-meat', title: 'Adana vs Urfa vs Şiş: A Guide to Turkish Kebabs' },
         { href: '/areas/green-lanes', title: 'Green Lanes Turkish Food Guide' },

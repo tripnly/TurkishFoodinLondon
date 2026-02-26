@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-01-15',
     authors: ['Turkish Food in London'],
+    images: ['/images/blog/turkish-breakfast.jpg'],
   },
   alternates: {
     canonical: 'https://turkishfoodinlondon.com/blog/turkish-breakfast-guide',
@@ -26,8 +27,11 @@ export default function TurkishBreakfastPost() {
       description="Everything you need to know about the most important meal of the day."
       date="2025-01-15"
       category="Guides"
-      categorySlug="turkish-breakfast-guide"
+      categorySlug="guides"
+      slug="turkish-breakfast-guide"
       readTime="8 min read"
+      featuredImage="/images/blog/turkish-breakfast.jpg"
+      featuredImageAlt="Traditional Turkish breakfast spread with cheese, olives, eggs and bread"
       relatedPosts={[
         { href: '/dishes/breakfast', title: 'Best Turkish Breakfast in London' },
         { href: '/areas/green-lanes', title: 'Green Lanes Turkish Food Guide' },
@@ -77,25 +81,6 @@ export default function TurkishBreakfastPost() {
         <li><strong>Pastırma:</strong> Air-dried cured beef</li>
       </ul>
 
-      <h3>Breads</h3>
-      <ul>
-        <li><strong>Simit:</strong> Sesame-crusted bread rings</li>
-        <li><strong>Fresh bread:</strong> Often from a wood-fired oven</li>
-        <li><strong>Bazlama:</strong> Soft, thick flatbread</li>
-        <li><strong>Açma:</strong> Soft, buttery rolls</li>
-      </ul>
-
-      <h2>The Hot Dishes</h2>
-      <p>
-        Beyond the spread, most places offer hot dishes to order:
-      </p>
-      <ul>
-        <li><strong>Menemen:</strong> Scrambled eggs with tomatoes, peppers, and spices</li>
-        <li><strong>Sucuklu yumurta:</strong> Eggs fried with sliced sucuk sausage</li>
-        <li><strong>Sigara böreği:</strong> Crispy filo pastry rolls with cheese</li>
-        <li><strong>Gözleme:</strong> Thin stuffed flatbread, cooked on a griddle</li>
-      </ul>
-
       <h2>How to Eat It</h2>
       <ol>
         <li><strong>Start with tea:</strong> Always. Turkish breakfast without tea isn't breakfast.</li>
@@ -108,31 +93,10 @@ export default function TurkishBreakfastPost() {
 
       <h2>Turkish Breakfast in London</h2>
       <p>
-        London has excellent options for full Turkish breakfast:
-      </p>
-      <ul>
-        <li><strong>Gökyüzü (Green Lanes):</strong> The full spread, available 8am-4pm</li>
-        <li><strong>Hala (Green Lanes):</strong> Family favourite, great gözleme</li>
-        <li><strong>Zahter (Carnaby Street):</strong> Central London option, Michelin-recognized</li>
-        <li><strong>Selale (Green Lanes):</strong> Award-winning breakfast spread</li>
-      </ul>
-      <p>
-        For the full guide to Turkish breakfast spots in London, see our{' '}
+        London has excellent options for full Turkish breakfast. For the full guide, see our{' '}
         <Link href="/dishes/breakfast" className="text-turkish-red hover:underline">
           dedicated breakfast guide
         </Link>.
-      </p>
-
-      <h2>Weekend Ritual</h2>
-      <p>
-        Turkish breakfast is best experienced as a weekend ritual. Arrive mid-morning, 
-        don't rush, bring people you want to spend time with. The meal is designed for 
-        conversation, for lingering, for enjoying the simple pleasure of good food shared.
-      </p>
-      <p>
-        In a world of quick breakfasts and to-go coffee, Turkish kahvaltı offers something 
-        increasingly rare: the chance to slow down, to taste, to connect. That's worth 
-        getting up for.
       </p>
     </BlogPostLayout>
   )
