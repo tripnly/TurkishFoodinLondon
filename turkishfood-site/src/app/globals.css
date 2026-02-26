@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-gray-800 bg-gray-50;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-turkish-red text-white px-7 py-3.5 rounded-lg font-semibold text-sm 
+           transition-all duration-200 hover:bg-turkish-red-dark hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-white px-7 py-3.5 rounded-lg font-semibold text-sm 
+           border border-white/30 transition-all duration-200 hover:bg-white/10;
+  }
+  
+  .card {
+    @apply bg-white border border-gray-200 rounded-xl transition-all duration-300
+           hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .section-header {
+    @apply text-3xl font-bold text-navy mb-2;
+  }
+  
+  .section-subheader {
+    @apply text-gray-500 text-base;
+  }
+}
