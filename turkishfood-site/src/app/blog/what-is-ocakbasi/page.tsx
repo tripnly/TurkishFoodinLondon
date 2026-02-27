@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2025-01-20',
     authors: ['Turkish Food in London'],
-    images: ['/images/blog/ocakbasi-grill.jpg'],
   },
   alternates: {
     canonical: 'https://turkishfoodinlondon.com/blog/what-is-ocakbasi',
@@ -29,8 +28,6 @@ export default function OcakbasiPost() {
       categorySlug="food-culture"
       slug="what-is-ocakbasi"
       readTime="5 min read"
-      featuredImage="/images/blog/ocakbasi-grill.jpg"
-      featuredImageAlt="Traditional Turkish ocakbaşı grill with flames and skewers"
       relatedPosts={[
         { href: '/blog/ordering-turkish-meat', title: 'Adana vs Urfa vs Şiş: A Guide to Turkish Kebabs' },
         { href: '/areas/green-lanes', title: 'Green Lanes Turkish Food Guide' },
@@ -72,20 +69,12 @@ export default function OcakbasiPost() {
         provides both intense heat and a subtle smokiness that's impossible to replicate. 
         It's also what creates those characteristic char marks on the meat.
       </p>
-      <p>
-        Watch the grill master work and you'll see constant adjustments: moving meat closer 
-        to or further from the coals, rotating skewers, managing flare-ups from dripping fat. 
-        It's skilled work that takes years to master.
-      </p>
 
       <h2>Ocakbaşı in London</h2>
       <p>
         London has some excellent ocakbaşı restaurants, particularly in areas with large Turkish 
         communities. Green Lanes, Dalston, and Stoke Newington all have traditional grill houses 
         where the ocakbaşı remains the focal point.
-      </p>
-      <p>
-        Some standout examples:
       </p>
       <ul>
         <li><strong>Mangal 1 (Dalston):</strong> The original, since the 1980s</li>
@@ -94,9 +83,6 @@ export default function OcakbasiPost() {
       </ul>
 
       <h2>How to Experience It</h2>
-      <p>
-        If you've never been to an ocakbaşı, here's what to expect:
-      </p>
       <ol>
         <li><strong>Start with meze:</strong> Small dishes while you wait for the grill</li>
         <li><strong>Watch the meat:</strong> It's acceptable—encouraged, even—to watch your food cook</li>
@@ -104,18 +90,6 @@ export default function OcakbasiPost() {
         <li><strong>Eat with bread:</strong> Fresh bread, often from a wood-fired oven, is essential</li>
         <li><strong>Finish with tea:</strong> Turkish tea, always, to aid digestion</li>
       </ol>
-
-      <h2>Beyond the Grill</h2>
-      <p>
-        While the grill is the star, a good ocakbaşı is about more than just meat. The best 
-        places also excel at meze (small dishes), fresh bread, and the overall atmosphere of 
-        warmth and hospitality.
-      </p>
-      <p>
-        The ocakbaşı represents something important about Turkish food culture: the belief that 
-        cooking should be visible, that fire transforms food, and that meals are meant to be 
-        shared. In an age of delivery apps and dark kitchens, that feels more valuable than ever.
-      </p>
     </BlogPostLayout>
   )
 }

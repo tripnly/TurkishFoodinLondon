@@ -4,16 +4,14 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'The Complete Guide to Turkish Breakfast (Kahvaltı)',
-  description: 'Everything you need to know about Turkish breakfast—the most important meal of the day. What to expect, how to eat it, and where to find it in London.',
-  keywords: ['Turkish breakfast', 'kahvaltı', 'serpme kahvaltı', 'Turkish breakfast London', 'menemen', 'simit'],
+  description: 'Everything you need to know about Turkish breakfast—the most important meal of the day.',
+  keywords: ['Turkish breakfast', 'kahvaltı', 'serpme kahvaltı', 'Turkish breakfast London'],
   openGraph: {
     title: 'The Complete Guide to Turkish Breakfast (Kahvaltı)',
-    description: 'Everything you need to know about Turkish breakfast—the most important meal of the day.',
+    description: 'Everything you need to know about Turkish breakfast.',
     url: 'https://turkishfoodinlondon.com/blog/turkish-breakfast-guide',
     type: 'article',
     publishedTime: '2025-01-15',
-    authors: ['Turkish Food in London'],
-    images: ['/images/blog/turkish-breakfast.jpg'],
   },
   alternates: {
     canonical: 'https://turkishfoodinlondon.com/blog/turkish-breakfast-guide',
@@ -30,8 +28,6 @@ export default function TurkishBreakfastPost() {
       categorySlug="guides"
       slug="turkish-breakfast-guide"
       readTime="8 min read"
-      featuredImage="/images/blog/turkish-breakfast.jpg"
-      featuredImageAlt="Traditional Turkish breakfast spread with cheese, olives, eggs and bread"
       relatedPosts={[
         { href: '/dishes/breakfast', title: 'Best Turkish Breakfast in London' },
         { href: '/areas/green-lanes', title: 'Green Lanes Turkish Food Guide' },
@@ -40,7 +36,7 @@ export default function TurkishBreakfastPost() {
       <p className="text-xl text-gray-600 leading-relaxed">
         In Turkey, breakfast isn't just a meal—it's an institution. <em>Kahvaltı</em> (literally 
         "before coffee") can last for hours, involves dozens of small dishes, and is considered 
-        the foundation of a good day. Here's everything you need to know.
+        the foundation of a good day.
       </p>
 
       <h2>What is Kahvaltı?</h2>
@@ -49,51 +45,33 @@ export default function TurkishBreakfastPost() {
         Instead of one or two main items, you get a spread of small dishes—cheeses, spreads, 
         vegetables, eggs, breads—all served together for sharing and grazing.
       </p>
-      <p>
-        The full experience is called <em>serpme kahvaltı</em> ("spread breakfast"), and at 
-        a good restaurant, your table will be covered with 15-20 different plates before 
-        you've even ordered hot dishes.
-      </p>
 
       <h2>The Essential Components</h2>
       
       <h3>Cheeses</h3>
       <ul>
-        <li><strong>Beyaz peynir:</strong> White cheese similar to feta, the breakfast staple</li>
-        <li><strong>Kaşar:</strong> Yellow cheese, often served fried or melted</li>
+        <li><strong>Beyaz peynir:</strong> White cheese similar to feta</li>
+        <li><strong>Kaşar:</strong> Yellow cheese, often served fried</li>
         <li><strong>Tulum:</strong> Aged cheese with stronger flavour</li>
-        <li><strong>Lor:</strong> Fresh, mild cheese like ricotta</li>
       </ul>
 
       <h3>Spreads</h3>
       <ul>
         <li><strong>Bal (honey):</strong> Often served with kaymak</li>
-        <li><strong>Kaymak:</strong> Clotted cream, the essential pairing for honey</li>
+        <li><strong>Kaymak:</strong> Clotted cream, essential pairing for honey</li>
         <li><strong>Tahin-pekmez:</strong> Tahini mixed with grape molasses</li>
-        <li><strong>Reçel:</strong> Jams, often homemade, in unusual flavours</li>
-      </ul>
-
-      <h3>Vegetables & Extras</h3>
-      <ul>
-        <li><strong>Tomatoes and cucumbers:</strong> Always fresh, simply sliced</li>
-        <li><strong>Olives:</strong> Multiple varieties, green and black</li>
-        <li><strong>Sucuk:</strong> Spiced Turkish sausage</li>
-        <li><strong>Pastırma:</strong> Air-dried cured beef</li>
       </ul>
 
       <h2>How to Eat It</h2>
       <ol>
-        <li><strong>Start with tea:</strong> Always. Turkish breakfast without tea isn't breakfast.</li>
-        <li><strong>Build your bites:</strong> Tear bread, add cheese, tomato, whatever—each bite different.</li>
-        <li><strong>Try the classic combination:</strong> Bread + kaymak + honey = perfect.</li>
+        <li><strong>Start with tea:</strong> Always.</li>
+        <li><strong>Build your bites:</strong> Tear bread, add cheese, tomato—each bite different.</li>
+        <li><strong>Try the classic:</strong> Bread + kaymak + honey = perfect.</li>
         <li><strong>Pace yourself:</strong> This is a marathon, not a sprint.</li>
-        <li><strong>Order hot dishes later:</strong> Once you've grazed the spread.</li>
-        <li><strong>End with more tea:</strong> Or Turkish coffee, if you're done.</li>
       </ol>
 
-      <h2>Turkish Breakfast in London</h2>
       <p>
-        London has excellent options for full Turkish breakfast. For the full guide, see our{' '}
+        For the full guide to Turkish breakfast spots, see our{' '}
         <Link href="/dishes/breakfast" className="text-turkish-red hover:underline">
           dedicated breakfast guide
         </Link>.
