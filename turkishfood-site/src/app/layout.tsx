@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -44,9 +45,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
-  },
   alternates: {
     canonical: 'https://turkishfoodinlondon.com',
   },
@@ -66,6 +64,14 @@ export default function RootLayout({
         <meta name="geo.placename" content="London" />
         <meta name="geo.position" content="51.5074;-0.1278" />
         <meta name="ICBM" content="51.5074, -0.1278" />
+        
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1144765684947111"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body>
         <GoogleAnalytics />
