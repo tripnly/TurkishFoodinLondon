@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect } from 'react'
 import { ArticleSchema, BreadcrumbSchema } from './Schema'
 
 interface BlogPostLayoutProps {
@@ -18,18 +21,26 @@ interface BlogPostLayoutProps {
   relatedPosts?: { href: string; title: string; image?: string }[]
 }
 
-// Ad slot component - replace with real ads later
-function AdSlot({ size = 'rectangle' }: { size?: 'rectangle' | 'banner' | 'sidebar' }) {
-  const sizes = {
-    rectangle: 'h-[250px] w-full',
-    banner: 'h-[90px] w-full',
-    sidebar: 'h-[600px] w-full',
-  }
-  
+// AdSense Display Ad
+function DisplayAd() {
+  useEffect(() => {
+    try {
+      // @ts-ignore
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
+    } catch (err) {
+      // AdSense not loaded yet
+    }
+  }, [])
+
   return (
-    <div className={`bg-gray-100 rounded-lg ${sizes[size]} flex items-center justify-center text-gray-400 text-sm`}>
-      <span>Advertisement</span>
-    </div>
+    <ins
+      className="adsbygoogle"
+      style={{ display: 'block' }}
+      data-ad-client="ca-pub-1144765684947111"
+      data-ad-slot="2061905441"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    />
   )
 }
 
@@ -48,7 +59,7 @@ function OfferBox({
   badge?: string
 }) {
   return (
-    <div className="bg-gradient-to-br from-turkish-red to-orange-600 text-white rounded-xl p-5 mb-6">
+    <div className="bg-gradient-to-br from-turkish-red to-orange-600 text-white rounded-xl p-5">
       {badge && (
         <span className="inline-block bg-white/20 text-xs font-semibold px-2 py-1 rounded mb-3">
           {badge}
@@ -69,7 +80,7 @@ function OfferBox({
 // Newsletter widget
 function NewsletterWidget() {
   return (
-    <div className="bg-cream rounded-xl p-5 mb-6">
+    <div className="bg-cream rounded-xl p-5">
       <h4 className="font-display text-lg font-bold text-navy mb-2">
         Get the Insider Updates
       </h4>
@@ -84,7 +95,7 @@ function NewsletterWidget() {
         />
         <button 
           type="submit"
-          className="w-full bg-turkish-red text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-turkish-red-dark transition-colors"
+          className="w-full bg-turkish-red text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-red-700 transition-colors"
         >
           Subscribe
         </button>
@@ -103,7 +114,7 @@ function PopularPosts() {
   ]
   
   return (
-    <div className="mb-6">
+    <div>
       <h4 className="font-display text-lg font-bold text-navy mb-4">Popular Guides</h4>
       <div className="space-y-3">
         {posts.map((post, i) => (
@@ -211,9 +222,9 @@ export default function BlogPostLayout({
                 {children}
               </div>
 
-              {/* In-content ad after article */}
-              <div className="mt-12 pt-8 border-t border-gray-200">
-                <AdSlot size="rectangle" />
+              {/* In-article Ad */}
+              <div className="mt-8">
+                <DisplayAd />
               </div>
 
               {/* Related Posts */}
@@ -229,18 +240,7 @@ export default function BlogPostLayout({
                         href={post.href}
                         className="group bg-gray-50 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
                       >
-                        {post.image ? (
-                          <div className="relative h-32">
-                            <Image
-                              src={post.image}
-                              alt={post.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                        ) : (
-                          <div className="h-32 bg-gradient-to-br from-navy to-navy-light" />
-                        )}
+                        <div className="h-32 bg-gradient-to-br from-navy to-navy-light" />
                         <div className="p-4">
                           <span className="text-navy font-semibold group-hover:text-turkish-red transition-colors">
                             {post.title}
@@ -267,6 +267,9 @@ export default function BlogPostLayout({
             <aside className="lg:col-span-1">
               <div className="sticky top-24 space-y-6">
                 
+                {/* Sidebar Ad */}
+                <DisplayAd />
+
                 {/* Offer Box */}
                 <OfferBox
                   badge="Featured"
@@ -282,16 +285,8 @@ export default function BlogPostLayout({
                 {/* Popular Posts */}
                 <PopularPosts />
 
-                {/* Sidebar Ad */}
-                <AdSlot size="rectangle" />
-
-                {/* Another Offer */}
-                <OfferBox
-                  title="10% Off First Order"
-                  description="Get authentic Turkish groceries delivered to your door."
-                  cta="Shop Now"
-                  href="/partners/groceries"
-                />
+                {/* Another Sidebar Ad */}
+                <DisplayAd />
 
               </div>
             </aside>
