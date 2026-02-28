@@ -10,6 +10,7 @@ const navItems = [
   { href: '/restaurants', label: 'Restaurants' },
   { href: '/blog', label: 'Blog' },
   { href: '/map', label: 'Map' },
+  { href: '/for-restaurants', label: 'List Your Restaurant', highlight: true },
 ]
 
 export default function Header() {
@@ -29,7 +30,11 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-gray-700 text-sm font-medium hover:text-turkish-red transition-colors"
+              className={
+                (item as any).highlight
+                  ? 'text-sm font-semibold bg-turkish-red text-white px-4 py-2 rounded-lg hover:bg-turkish-red-dark transition-colors'
+                  : 'text-gray-700 text-sm font-medium hover:text-turkish-red transition-colors'
+              }
             >
               {item.label}
             </Link>
