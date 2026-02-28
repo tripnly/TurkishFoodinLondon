@@ -31,6 +31,30 @@ const areas = [
     stats: '5+ restaurants • Casual vibe • Great for lunch',
     gradient: 'from-sky-400 to-cyan-400',
   },
+  {
+    slug: 'wood-green',
+    name: 'Wood Green',
+    subtitle: 'N22',
+    description: 'The northern frontier of Turkish London. Supermarkets, bakeries, and family restaurants serving the local community—less touristy, more authentic.',
+    stats: '6+ restaurants • Turkish supermarkets • Family-run',
+    gradient: 'from-amber-400 to-orange-400',
+  },
+  {
+    slug: 'finsbury-park',
+    name: 'Finsbury Park',
+    subtitle: 'N4 / N7',
+    description: 'Where Green Lanes meets the Piccadilly line. A growing cluster of Turkish cafes, bakeries, and casual kebab spots around the station.',
+    stats: '5+ restaurants • Great transport links • Casual eats',
+    gradient: 'from-violet-400 to-purple-400',
+  },
+  {
+    slug: 'edmonton',
+    name: 'Edmonton',
+    subtitle: 'N18',
+    description: 'North London\'s hidden Turkish quarter. Proper neighbourhood restaurants, halal butchers, and some of the best-value Turkish meals in the city.',
+    stats: '4+ restaurants • Budget-friendly • Local scene',
+    gradient: 'from-teal-400 to-emerald-400',
+  },
 ]
 
 export default function AreasPage() {
@@ -75,7 +99,7 @@ export default function AreasPage() {
         {/* Coming Soon */}
         <div className="mt-12 text-center">
           <p className="text-gray-500 text-sm">
-            More areas coming soon: Wood Green, Finsbury Park, Edmonton
+            More areas coming soon: Hackney, Tottenham, Enfield
           </p>
         </div>
       </div>

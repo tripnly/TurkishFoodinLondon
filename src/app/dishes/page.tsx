@@ -26,22 +26,42 @@ const dishes = [
     name: 'Best Lahmacun',
     icon: '🫓',
     description: 'Turkish flatbread at its finest. Thin, crispy, topped with spiced lamb.',
-    highlights: 'Coming soon',
+    highlights: 'Gökyüzü • Hala • Mangal 1 • Selale',
   },
   {
     slug: 'kunefe',
     name: 'Best Künefe',
     icon: '🍯',
     description: 'Hot cheese, crispy kadayıf, sugar syrup. The ultimate Turkish dessert.',
-    highlights: 'Coming soon',
+    highlights: 'Antepliler Künefe • Yasar Halim • Gökyüzü',
+  },
+  {
+    slug: 'pide',
+    name: 'Best Pide',
+    icon: '🥖',
+    description: 'Turkish boat-shaped flatbread with melted cheese, egg, and spiced meat fillings.',
+    highlights: 'Gökyüzü • Hala • Devran • Petek',
+  },
+  {
+    slug: 'adana-kebab',
+    name: 'Best Adana Kebab',
+    icon: '🍢',
+    description: 'Hand-minced lamb on a flat skewer, spiced with Urfa and Aleppo pepper, grilled over charcoal.',
+    highlights: 'Mangal 1 • Gökyüzü • Selale • Antepliler',
+  },
+  {
+    slug: 'baklava',
+    name: 'Best Baklava',
+    icon: '🍰',
+    description: 'Layers of crispy filo, crushed pistachios, and light sugar syrup. The Gaziantep way.',
+    highlights: 'Yasar Halim • Bebek Baklava • Antepliler',
   },
 ]
 
 const comingSoon = [
-  { name: 'Best Pide', icon: '🥖' },
-  { name: 'Best Adana Kebab', icon: '🍢' },
-  { name: 'Best Baklava', icon: '🍰' },
   { name: 'Late Night Turkish', icon: '🌙' },
+  { name: 'Best Manti', icon: '🥟' },
+  { name: 'Best Gözleme', icon: '🫓' },
 ]
 
 export default function DishesPage() {

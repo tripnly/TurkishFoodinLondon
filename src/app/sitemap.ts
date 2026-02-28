@@ -68,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // Area pages
-  const areas = ['green-lanes', 'dalston', 'stoke-newington']
+  const areas = ['green-lanes', 'dalston', 'stoke-newington', 'wood-green', 'finsbury-park', 'edmonton']
   const areaPages = areas.map((area) => ({
     url: `${baseUrl}/areas/${area}`,
     lastModified: new Date(),
@@ -77,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Dish pages
-  const dishes = ['doner', 'breakfast', 'lahmacun', 'kunefe']
+  const dishes = ['doner', 'breakfast', 'lahmacun', 'kunefe', 'pide', 'adana-kebab', 'baklava']
   const dishPages = dishes.map((dish) => ({
     url: `${baseUrl}/dishes/${dish}`,
     lastModified: new Date(),

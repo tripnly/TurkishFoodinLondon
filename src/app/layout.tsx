@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | Turkish Food in London',
   },
   description: 'The definitive guide to Turkish food in London. From Green Lanes institutions to Dalston ocakbaşı. Written by someone who actually knows the difference.',
-  keywords: ['Turkish food London', 'Turkish restaurants London', 'best kebab London', 'Green Lanes restaurants', 'Dalston Turkish', 'ocakbaşı London', 'Turkish breakfast London', 'döner London', 'lahmacun London'],
+  keywords: ['Turkish food London', 'Turkish restaurants London', 'best kebab London', 'Green Lanes restaurants', 'Dalston Turkish', 'ocakbaşı London', 'Turkish breakfast London', 'döner London', 'lahmacun London', 'best pide London', 'adana kebab London', 'baklava London', 'künefe London', 'Turkish food Wood Green', 'Turkish food Finsbury Park', 'Turkish food Edmonton', 'halal restaurants London', 'best Turkish kebab near me'],
   authors: [{ name: 'Turkish Food in London' }],
   creator: 'Turkish Food in London',
   publisher: 'Turkish Food in London',
