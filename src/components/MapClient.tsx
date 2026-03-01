@@ -88,6 +88,7 @@ export default function MapClient() {
   const [selectedType, setSelectedType] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
   const [activeRestaurant, setActiveRestaurant] = useState<Restaurant | null>(null)
+  const [mobileView, setMobileView] = useState<'list' | 'map'>('list')
 
   // Sort: spotlight first, then featured, then free
   const filtered = useMemo(() => {
@@ -165,7 +166,7 @@ export default function MapClient() {
       {/* Split: Cards + Map */}
       <div className="flex flex-1 overflow-hidden">
         {/* Card List */}
-        <div className="w-full md:w-[420px] overflow-y-auto border-r border-gray-200 bg-gray-50">
+        <div className={`w-full md:w-[420px] overflow-y-auto border-r border-gray-200 bg-gray-50 ${mobileView === 'map' ? 'hidden md:block' : ''}`}>
           <div className="px-4 py-3 border-b border-gray-100 bg-white">
             <p className="text-sm text-gray-500 font-medium">{filtered.length} spots to explore</p>
           </div>
@@ -258,7 +259,7 @@ export default function MapClient() {
         </div>
 
         {/* Map */}
-        <div className="hidden md:block flex-1 relative">
+        <div className={`flex-1 relative ${mobileView === 'list' ? 'hidden md:block' : ''}`}>
           <MapContainer
             center={[51.575, -0.090]}
             zoom={12}
@@ -339,16 +340,17 @@ export default function MapClient() {
           </div>
         </div>
 
-        {/* Mobile: Map toggle */}
+        {/* Mobile: List/Map toggle */}
         <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
           <button
-            onClick={() => {
-              const el = document.querySelector('.leaflet-container')
-              if (el) el.scrollIntoView({ behavior: 'smooth' })
-            }}
-            className="bg-turkish-red text-white px-6 py-3 rounded-full shadow-lg text-sm font-semibold"
+            onClick={() => setMobileView(mobileView === 'list' ? 'map' : 'list')}
+            className="bg-turkish-red text-white px-6 py-3 rounded-full shadow-lg text-sm font-semibold flex items-center gap-2"
           >
-            🗺️ Show Map
+            {mobileView === 'list' ? (
+              <><span>🗺️</span> Show Map</>
+            ) : (
+              <><span>📋</span> Show List</>
+            )}
           </button>
         </div>
       </div>
