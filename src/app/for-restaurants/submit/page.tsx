@@ -23,6 +23,8 @@ const types = [
 
 export default function SubmitRestaurantPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     restaurantName: '',
     ownerName: '',
@@ -49,27 +51,26 @@ export default function SubmitRestaurantPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // For static site: open mailto with pre-filled info
-    const subject = encodeURIComponent(`New Restaurant Submission: ${formData.restaurantName}`)
-    const body = encodeURIComponent(
-      `Restaurant Name: ${formData.restaurantName}\n` +
-      `Owner/Manager: ${formData.ownerName}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Area: ${formData.area === 'Other (please specify)' ? formData.otherArea : formData.area}\n` +
-      `Address: ${formData.address}, ${formData.postcode}\n` +
-      `Type: ${formData.type}\n` +
-      `Description: ${formData.description}\n` +
-      `Special Dishes: ${formData.specialDishes}\n` +
-      `Price Range: ${formData.priceRange}\n` +
-      `Hours: ${formData.hours}\n` +
-      `Website: ${formData.website}\n` +
-      `Instagram: ${formData.instagram}\n` +
-      `Interested Tier: ${formData.tier}\n` +
-      `Additional Message: ${formData.message}`
-    )
-    window.open(`mailto:nejat@ticaret.com?subject=${subject}&body=${body}`, '_self')
-    setSubmitted(true)
+    setSubmitting(true)
+    setError('')
+
+    try {
+      const res = await fetch('/api/submit-restaurant', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) {
+        throw new Error('Submission failed')
+      }
+
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please try again or email us directly at nejat@ticaret.com')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -79,12 +80,8 @@ export default function SubmitRestaurantPage() {
           <p className="text-6xl mb-6">🎉</p>
           <h1 className="font-display text-3xl font-bold text-navy mb-4">Thank You!</h1>
           <p className="text-gray-600 mb-6">
-            Your email client should have opened with your restaurant details.
-            Please send the email and we&apos;ll review your submission within 48 hours.
-          </p>
-          <p className="text-gray-500 text-sm mb-8">
-            If your email didn&apos;t open, please send your details directly to{' '}
-            <a href="mailto:nejat@ticaret.com" className="text-turkish-red hover:underline">nejat@ticaret.com</a>
+            Your restaurant details have been submitted successfully.
+            We&apos;ll review your submission and get back to you within 48 hours.
           </p>
           <Link href="/" className="btn-primary inline-block px-8 py-3">
             Back to Homepage
@@ -431,11 +428,15 @@ export default function SubmitRestaurantPage() {
 
             {/* Submit */}
             <div className="text-center">
+              {error && (
+                <p className="text-red-600 text-sm mb-4 bg-red-50 p-3 rounded-lg">{error}</p>
+              )}
               <button
                 type="submit"
-                className="btn-primary px-12 py-3.5 text-base"
+                disabled={submitting}
+                className="btn-primary px-12 py-3.5 text-base disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Submit Your Restaurant
+                {submitting ? 'Submitting...' : 'Submit Your Restaurant'}
               </button>
               <p className="text-xs text-gray-400 mt-3">
                 By submitting, your details will be sent to our team for review.
