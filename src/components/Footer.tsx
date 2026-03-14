@@ -20,6 +20,7 @@ const footerLinks = {
     { href: '/blog', label: 'All Posts' },
   ],
   site: [
+    { href: '/markets', label: 'Markets & Shops' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
     { href: '/privacy', label: 'Privacy' },

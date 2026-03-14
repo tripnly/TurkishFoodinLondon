@@ -9,6 +9,7 @@ const navItems = [
   { href: '/dishes', label: 'Dishes' },
   { href: '/restaurants', label: 'Restaurants' },
   { href: '/blog', label: 'Blog' },
+  { href: '/markets', label: 'Markets' },
   { href: '/map', label: 'Map' },
   { href: '/for-restaurants', label: 'List Your Restaurant', highlight: true },
 ]
